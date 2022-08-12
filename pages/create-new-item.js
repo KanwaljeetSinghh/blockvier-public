@@ -138,7 +138,7 @@ export default function CreateNewItem(){
                         <h6 className="f-400 m-0 mt-1  secondary-font">Set this item as explicit and sensitive content</h6>
                     </div> 
                     <label>External link</label>
-                    <h6 className="f-500 text-grey secondary-font mb-0 mb-1">We will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</h6>
+                    <h6 className="f-500 text-grey secondary-font mb-0 mb-1">We will include a link to this URL on this item detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</h6>
                     <input type="text" placeholder="Enter website link"/>
                     <div className="mb-3 d-flex d-align-center d-justify-space-between">
                         <div className="">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Setting from "../icons/Setting";
 import Checkbox from "../modules/Check-Box";
 import styles from '../modules/css/settings.module.css';
@@ -7,6 +7,17 @@ import ImageIcon from "../icons/Image-icon";
 import List from "../modules/List";
 import $ from 'jquery';
 function Settings(){
+    const settingTabRef = useRef(null);
+    const [settingTab,setSettingTab] = useState(0);
+    
+    const settingTabHandler = (e) => {
+        settingTabRef.current.querySelectorAll("div").forEach((item)=>{
+            item.classList.remove(styles.active)
+        })
+        e.currentTarget.classList.add(styles.active)
+        setSettingTab(e.currentTarget.getAttribute("type"))
+    
+    }
     const profileImageHandler = () =>{
         $('.file-upload').on('click', function() {
             
@@ -15,12 +26,7 @@ function Settings(){
     } 
     
     const[account,setnotification] = useState(0);
-    const Notificationhandler = () =>{
-        setnotification(1);
-    }
-    const AccountHandler = () =>{
-        setnotification(0);
-    }
+    
     return(
         
     <form>
@@ -29,18 +35,18 @@ function Settings(){
                 <h1 className="font-40 f-400">Settings</h1>
                 <a className="btn-big d-flex d-align-center d-justify-center rounded">Save Changes</a>
             </div>
-            <div className="col-3 ">
-                <div className="d-flex" type="0" onClick={AccountHandler}>
+            <div ref={settingTabRef} className="col-3 ">
+                <div className={`d-flex d-align-center ${styles["setting-tab"]}`} type="0" onClick={settingTabHandler}>
                     <Setting color="#9D9D9D"></Setting>
-                    <h6 className="ml-2 text-light-grey cursor-pointer">Account</h6>
+                    <h5 className="ml-2 l-600 text-light-grey cursor-pointer mb-0 l-56">Account</h5>
                 </div>
-                <div className="d-flex" type="1" onClick={Notificationhandler}>
+                <div className={`d-flex d-align-center ${styles["setting-tab"]}`} type="1" onClick={settingTabHandler}>
                     <Setting color="#9D9D9D"></Setting>
-                    <h6 className="ml-2 text-light-grey cursor-pointer">Notification</h6>
+                    <h5 className="ml-2 l-600 text-light-grey cursor-pointer mb-0 l-56">Notification</h5>
                 </div>
             </div>
             
-            {account ==0 &&
+            {settingTab ==0 &&
                 
                 <div className="col-8 ml-5 d-flex ">
                     <div className="col-7 d-flex d-flex-column">
@@ -90,7 +96,7 @@ function Settings(){
                 </div>
                 
             }
-            {account ==1 &&
+            {settingTab ==1 &&
                 <div className="col-6 ml-5 ">
                     <h6 className="f-400 secondary-font">Select which notifications you would like to receive</h6>
                     <div className="mt-4">

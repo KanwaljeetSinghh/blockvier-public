@@ -9,6 +9,10 @@
     height:350px;
     overflow-y: hidden;
 }
+.providers.active{
+    height:auto;
+    overflow-y: hidden;
+}
 .btn{
     width:100%;
 }
