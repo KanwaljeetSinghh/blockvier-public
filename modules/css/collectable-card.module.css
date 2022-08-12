@@ -1,0 +1,37 @@
+.collectable-cards{
+    grid-template-columns: repeat(5,1fr);
+    gap: 30px;
+}
+.collectable-card-image{
+    background-color: #F3F3F3;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.collectable-card-image img{
+    width: 100%;
+}
+.collectable-card-title{
+    margin-bottom: 12px;
+}
+.collectable-card-title h5{
+    max-width: 236px;
+}
+.collectable-card-price h4 svg{
+    margin-right:6px;
+}
+.collectable-card-price h6{
+    margin-left: 20px;
+}
+.collectable-card-price h6:before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    border-radius: 8px;
+    background: #9D9D9D;
+    left: -11px;
+    top: 10px;
+}
+.collectable-card-bid{
+    margin-top: 12px;
+}

@@ -1,0 +1,96 @@
+/* This file is used to manage all the global classes need to manage the components of Omnisea */
+
+.section{
+    margin-top:120px;
+}
+.container{
+    width:100%;
+    max-width:1640px;
+    margin:0 auto;
+}
+.container-fluid{
+    width: 100%;
+    margin:0 auto;
+}
+.container-large{
+    width:100%;
+    max-width:1920px;
+    margin:0 auto;
+}
+.even-padding{
+    padding:28px;
+}
+.odd-padding{
+    padding:24px 28px;
+}
+.slider-nav{
+    height:48px;
+    width:48px;
+}
+.btn svg,.btn-small svg{
+    margin-left: 13px;
+    margin-top: 2px;
+}
+.btn-crypto{
+    padding: 14px 20px;
+    border: 1px solid #4C4C4C;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4C4C4C;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.m-t-4{
+    margin-top: 4px;
+}
+.m-t-6{
+margin-top: 6px;
+}
+.mt-12{
+margin-top:12px;
+}
+.mt-20{
+margin-top: 20px;
+}
+.mt-284{
+margin-top: 284px;
+}
+.m-r-6{
+margin-right: 6px;
+}
+.m-r-12{
+margin-right: 12px;
+}
+.m-l-4{
+margin-left: 4px;
+}
+.m-l-6{
+margin-left: 6px;
+}
+.m-l-12{
+margin-left: 12px;
+} 
+.mr-80{
+margin-right:80px;
+} 
+.p-02{
+padding: 2px;
+}
+.p-20{
+padding: 20px;
+}
+.transform-90{
+transform: rotate(90deg);
+}
+.gap-2{
+gap:16px;
+}
+.gap-3{
+gap:24px;
+}
+.gap-8{
+gap:48px;
+}

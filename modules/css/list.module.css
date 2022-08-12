@@ -1,0 +1,27 @@
+.list__wrapper{
+    list-style: none;
+    padding-left: 20px;
+}
+.list__wrapper li{
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--light-grey);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.list__wrapper li.active{
+    color: #000;
+}
+.list__wrapper li.active::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 56px;
+    background: linear-gradient(96.06deg, #FEAC5E 0%, #C779D0 50%, #4BC0C8 100%);
+    top: 0;
+    left: -20px;
+    border-radius: 10px;
+}

@@ -1,0 +1,10 @@
+.marketplace__collectables{
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+.marketplace__inputs-filter{
+    width: 46.5%;
+}
+.marketplace__inputs input{
+    padding: 11.5px 16px;
+}

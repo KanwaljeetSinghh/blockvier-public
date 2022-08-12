@@ -1,0 +1,157 @@
+
+.product-image{
+    height:640px;
+    background: var(--smoke-white);
+    position: relative;
+    border-radius: 20px;
+}
+.product-image img{
+    width:100%;
+    height:100%;
+}
+.expand{
+    position: absolute;
+    width:48px;
+    height:48px;
+    border-radius: 12px;
+    background-color: #E6E6E6;
+    right:24px;
+    top:24px;
+}
+
+
+.full-screen-img{
+    width:80%;
+    height:800px;
+    margin-left: 10%;
+    margin-top: 5%;
+    background: white;
+}
+.full-screen-img img{
+    height: 100%;
+    width: 100%;
+}
+.open-in-map{
+    width:132px;
+    border: 1px solid #E6E6E6;
+    border-radius: 20px;
+    padding: 8px 10px;
+}
+.product-view{
+    grid-template-columns:40% 55%;
+    grid-gap:5%;
+    display: grid; 
+    margin-bottom: 40px;
+}
+.product-user-profile{
+    margin-top:40px;
+}
+.product-user-profile-img{
+    width:28px;
+    height:28px;
+}
+.product-user-profile-img img{
+    width:100%;
+    height: 100%;
+    border-radius: 50px;
+}
+.about__product-table{
+    grid-template-columns:50% 50%;
+    grid-gap:20px;
+    display: grid;
+}
+.description{
+    height:55px;
+    overflow: hidden;
+}
+.description .active{
+    height:150px;
+}
+.about__product-history{
+    grid-template-columns:68% 30%;
+    grid-gap:2%;
+    display: grid;
+    margin-top: 40px;
+}
+.about__product-history label{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.about__product-history select{
+    width:280px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 12px;
+    padding: 13px 16px;
+    margin-left: 8px;
+    outline: none;
+    color:var(--dark-grey);
+    border: 1px solid #E6E6E6
+}
+.shipping-detail{
+    background: rgba(126, 87, 194, 0.12);
+}
+.properties-levels{
+    grid-template-columns: 47% 47%;
+    gap:6%;
+}
+.digital-properties{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.digital-levels{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.digital-properties div{
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.digital-properties > div:first-child{
+    background: linear-gradient(96.06deg, rgba(254, 172, 94, 0.24) 0%, rgba(199, 121, 208, 0.24) 50%, rgba(75, 192, 200, 0.24) 100%);
+}
+.digital-properties > div:nth-child(2){
+
+    background: rgba(1, 197, 103, 0.12); 
+}
+.digital-properties > div:nth-child(3){
+    background: rgba(1, 197, 103, 0.12);
+}
+.digital-properties > div:nth-child(4){
+    background: rgba(126, 87, 194, 0.12);
+}
+.digital-properties > div:nth-child(5){
+    background: rgba(126, 87, 194, 0.12);
+}
+.digital-properties > div:nth-child(6){
+    background: rgba(235, 89, 81, 0.12);   
+}
+.digital-levels div{
+    padding: 10px 20px;
+    border-radius: 10px;   
+}
+.digital-levels .progress-bar {
+    height: 12px ;
+    padding: 0;
+    background-color: var(--smoke-white);
+    border-radius: 100px;
+}
+.product-activity label{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.product-activity select{
+    width:280px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 12px;
+    padding: 13px 16px;
+    margin-left: 8px;
+    outline: none;
+    color:var(--dark-grey);
+    border: 1px solid #E6E6E6
+}

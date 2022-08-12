@@ -1,0 +1,108 @@
+.heading{
+    margin-top: -4%;
+}
+.personal{
+    width:404px;
+    padding:20px;
+    background: transparent;
+    border-radius: 10px;
+}
+.business{
+    width:404px;
+    padding:20px;
+    background: transparent;
+    border-radius: 10px;
+}
+.circle{
+    height: 27px;
+    width:27px;
+    border-radius: 50%;
+    border:1px solid #E6E6E6;
+    margin-right: 19px;
+}
+.active{
+    background-color: white;
+}
+.active .circle{
+    border:none;
+    background-color: var(--primary);
+}
+.create-item label{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 28.5px;
+    margin-bottom: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.create-item input[type=text],
+.create-item input[type=password],
+.create-item input[type=email]{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-bottom: 28px;
+}
+.create-item select{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-bottom: 28px;
+}
+.upload-section{
+    padding: 56px;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+.create-item textarea{
+    outline:none;
+    border:none;
+    background-color: var(--smoke-white);
+    padding:15.5px 16px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 28px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.grade label{
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color:var(--dark-grey);
+    margin-left: 10px;
+}
+.create-item input[type=number]{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    margin-bottom: 0;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+}
+.create-item input::-webkit-outer-spin-button,
+.create-item input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.create-item input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,26 @@
+.email-form-section{
+    padding: 1rem 0.6rem 1rem 1.75rem;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    max-width:402px;
+    height: 48px;
+}
+.email-form{
+    margin-left:1.35rem;
+    flex: 1;
+}
+.email-form input{
+    border:none;
+}
+.email-form input:focus-visible{
+    outline: none;
+}
+.btn-form{
+    background-color: var(--secondary);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 7px 12px;
+}

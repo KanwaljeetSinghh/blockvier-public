@@ -1,0 +1,14 @@
+.heading{
+    margin-top: -4%;
+}
+.logo img{
+    width:36px;
+    height:36px;
+}
+.providers{
+    height:350px;
+    overflow-y: hidden;
+}
+.btn{
+    width:100%;
+}

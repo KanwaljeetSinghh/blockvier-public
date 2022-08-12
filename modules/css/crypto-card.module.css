@@ -1,0 +1,10 @@
+.crypto-cards{
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 28px;
+}
+.crypto-card{
+    padding: 2.8rem;
+}
+.crypto-card-title{
+    margin-left: 12px;
+}

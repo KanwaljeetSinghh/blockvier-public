@@ -1,0 +1,151 @@
+.create-account{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.personal{
+    width:404px;
+    padding:20px;
+    background: transparent;
+    border-radius: 10px;
+}
+.business{
+    width:404px;
+    padding:20px;
+    background: transparent;
+    border-radius: 10px;
+}
+.circle{
+    height: 27px;
+    width:27px;
+    border-radius: 50%;
+    border:1px solid #E6E6E6;
+    margin-right: 19px;
+}
+.active{
+    background-color: white;
+}
+.active .circle{
+    border:none;
+    background-color: var(--primary);
+}
+
+.create-account label{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 28.5px;
+    margin-bottom: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.create-account input[type=text],
+.create-account input[type=password],
+.create-account input[type=email]{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-bottom: 28px;
+}
+.phone{
+    margin-bottom: 28px;
+}
+.phone input[type=number]{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    margin-bottom: 0;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+}
+.phone input::-webkit-outer-spin-button,
+.phone input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.phone input[type=number] {
+  -moz-appearance: textfield;
+}
+.upload-section{
+    padding: 56px;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+.create-account .border-line{
+    border-top: 2px solid #E6E6E6;
+    width:45%;
+}
+.create-account .span-content{
+    padding: 0 20px;
+    z-index:999;
+    font-size: 19px;
+    font-weight: 600;
+    color:var(--light-grey);
+    background-color: white;
+   
+}
+/* sell method page */
+.price-module{
+    display: grid;
+    grid-template-columns: 57% 43%;
+}
+.sell-method{
+    width:240px;
+}
+.sell-method select{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 150%;
+    padding: 15px 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border:none;
+    background-color: transparent;
+}
+.sell-method select:focus-visible{
+    outline:none;
+}
+.sell-method input{
+    outline:none;
+    border:none;
+    border-left:1px solid #E6E6E6;
+    background-color: transparent;
+    padding:15px 20px;
+    font-size: 18px;
+    line-height: 150%;
+    margin: 0;
+}
+.instruction{
+    width:13px;
+    height: 13px;
+    border-radius: 50%;
+    color:white;
+    background-color: #EB5951;
+    font-size: 10px;
+}
+.summary{
+    width:480px;
+    height:fit-content;
+}
+.expiry-date select{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 150%;
+    padding: 15px 16px;
+    border-radius: 12px;
+    border:none;
+    background-color: var(--smoke-white);
+}
+.sell-method select:focus-visible{
+    outline:none;
+}
+/* create new item */

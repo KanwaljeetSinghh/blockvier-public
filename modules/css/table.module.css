@@ -1,0 +1,34 @@
+.table-default-row{
+    border-bottom: 1px solid #E6E6E6;
+    
+}
+.digital-table{
+    display: grid;
+    grid-template-columns: 10% 10% 15% 15% 10% 20%;
+    gap: 3%;
+    text-align: left;
+}
+.table-default-row:last-child{
+    border-bottom: none;
+}
+.table-column{
+    padding: 12px 20px;
+}
+.digital-table-column{
+    padding: 12px 0;
+}
+.profile{
+    width:28px;
+    height:28px;
+    border-radius: 100px;
+}
+.digital-table-2{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 10% 15%;
+    gap: 3%;
+    text-align: left;
+}
+.digital-table-2:nth-child(1){
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}

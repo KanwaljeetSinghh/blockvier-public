@@ -1,0 +1,85 @@
+.personal-details{
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 8px;
+}
+.personal-details label{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 28.5px;
+    margin-bottom: 8px;
+}
+.personal-details input{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    margin-bottom: 28px;
+}
+.personal-details textarea{
+    height: 110px;;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    margin-bottom: 28px;
+}
+.profile-picture{
+    width:201px;
+    height: 201px;
+    border-radius: 500px;
+    background-color: var(--smoke-white);
+    margin-top: 20px;
+}
+.profile-picture{
+    width:201px;
+    height: 201px;
+    border-radius: 500px;
+    background-color: var(--smoke-white);
+    margin-top: 20px;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.profile-canvas{
+    height: 180px;
+    background-color: var(--smoke-white);
+    margin-top: 20px;
+}
+.social-links label{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 28.5px;
+    margin-bottom: 8px;
+}
+.social-links input{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 15.5px 16px;
+    outline: none;
+    border: none;
+    background-color: var(--smoke-white);
+    border-radius: 10px;
+    margin-bottom: 28px;
+}
+/*faqs page */
+.faqs{
+    display: grid;
+    grid-template-columns: 47% 47%;
+    gap:6%;
+}

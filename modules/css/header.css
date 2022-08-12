@@ -1,0 +1,17 @@
+.menu__link svg{
+    margin-left: 5px;
+    margin-top: 11px;
+}
+.menu__link:after{
+    content:'';
+    position: absolute;
+    height:4px;
+    background: linear-gradient(96.06deg, #FEAC5E 0%, #C779D0 50%, #4BC0C8 100%);
+    border-radius: 2px;
+    bottom:-8px;
+    left:0;
+    transition: 0.3s all ease;
+}
+.menu__link.active-menu:after{
+    width:100%;
+}
