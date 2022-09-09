@@ -4,7 +4,7 @@ import HeaderMenu from "./Header-Menu";
 import BannerButton from "./Banner-Button";
 import SearchModal from "./Search-Modal";
 import {useEffect, useState} from 'react';
-import Link from 'next/link'
+import Link from 'next/link' 
 function Header(){
     const [search,setSearch] = useState(false);
     const [hasMount, setHasMount] = useState(false);
@@ -18,8 +18,6 @@ function Header(){
     useEffect(()=>{
         setHasMount(true)
     },[])
-
-    
     if(!hasMount){
         return <></>
     }
