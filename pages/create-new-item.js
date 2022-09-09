@@ -1,6 +1,6 @@
 import { useState,useEffect,useRef } from "react";
 import SectionHeading from "../modules/Section-Heading";
-import styles from '../modules/css/create-new-item.module.css';
+import styles from "../modules/css/create-new-item.module.css";
 import ImageIconaccount from "../icons/Image-icon-account";
 import Checkbox from "../modules/Check-Box";
 import Plus from "../icons/Plus";
@@ -20,10 +20,10 @@ export default function CreateNewItem(){
                 {tab==0 && <SectionHeading title="Create" highlighted-title="new item"></SectionHeading>}
                 {tab==1 && <SectionHeading title="Create" highlighted-title="a new listing"></SectionHeading>}
 
-                <h5 className={`text-grey f-500 secondary-font ${styles['heading']}`}>Connect with one of our available wallet providers or please create a new one.</h5>
+                <h5 className={`text-grey f-500 secondary-font ${styles["heading"]}`}>Connect with one of our available wallet providers or please create a new one.</h5>
                 <h6 className="f-500 text-danger mt-3">*Required fields</h6>
                 <div ref={tabRef} className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
-                    <div value="personal" onClick={tabHandler} className={`d-flex tab ${styles["personal"]} ${styles['active']}`}>
+                    <div value="personal" onClick={tabHandler} className={`d-flex tab ${styles["personal"]} ${styles["active"]}`}>
                         <div className={`${styles["circle"]}`}></div>
                         <div>
                             <h5 className="f-600 mb-0 secondary-font">Physical product</h5>

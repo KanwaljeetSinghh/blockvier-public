@@ -20,7 +20,7 @@ import ModalBid from "../../modules/Modal-Bid";
 
     function ProductDeatil(){
         const[verify,setVerify] = useState(0);
-        const[physical,setDigital]=useState(1);
+        const[physical,setDigital]=useState(0);
         const[beforeBid,afterBid] = useState(0);
         const[fullScreen,setFullScreen] = useState(false);
         const[modalBid,setModalBid] = useState(false);

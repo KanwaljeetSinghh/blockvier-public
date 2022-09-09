@@ -8,10 +8,13 @@ import Link from 'next/link'
 function Header(){
     const [search,setSearch] = useState(false);
     const [hasMount, setHasMount] = useState(false);
+    const [profileModal,setProfileModal] = useState(false)
     const searchHandler = () =>{
         setSearch(prev => !prev);
     }
-    
+    const profileModalHandler = () => {
+        setProfileModal(prev => !prev)
+    }
     useEffect(()=>{
         setHasMount(true)
     },[])
