@@ -29,9 +29,10 @@ function Header(){
                 <Link href="/connect-wallet">
                     <a><BannerButton type="0" button="btn-small" value="Connect"></BannerButton></a>
                 </Link>
-                <BannerButton type="1" childs="true" button="btn-icon-only"></BannerButton>
+                <BannerButton type="1" childs="true" button="btn-icon-only" profileModal={profileModalHandler}></BannerButton>
             </div>
             {search && <SearchModal handler={searchHandler}></SearchModal>}
+            {profileModal && <LoginModal></LoginModal>}
         </header>
         
     )

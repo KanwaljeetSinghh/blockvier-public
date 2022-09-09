@@ -14,7 +14,7 @@ export default function ConnectWallet(){
             <div className="col-6 offset-3 mt-3">
                 <SectionHeading title="Connect your" highlighted-title="wallet"></SectionHeading>
                 <h5 className={`text-grey f-500 secondary-font ${styles['heading']}`}>Connect with one of our available wallet providers or please create a new one.</h5>
-                <div className=" border rounded p-20" style={{background:"#F0EFFF"}}>
+                <div className=" border rounded p-20" style={{backgroundColor:"#F0EFFF"}}>
                     <h3 className="f-600 text-primary">Become Unstoppable</h3>
                     <h5 className="f-500 text-grey secondary-font">Create you custom domain from Unstoppable domains so you never have to remember your complex 16 digits and keep all your crypto in one place.</h5>
                     <div className="d-flex d-align-center d-justify-space-between">
@@ -22,7 +22,7 @@ export default function ConnectWallet(){
                             <img src="images/Unstop-domain.png"/>
                             <h5 className="f-600 secondary-font mb-0 ml-2">Unstoppable Domains</h5>
                         </div>
-                        <h6 className="f-700 text-primary p-1 pl-2 pr-2 bg-smoke rounded-100 mb-0" style={{background: "rgba(126, 87, 194, 0.12)"}}>New</h6>
+                        <h6 className="f-700 text-primary p-1 pl-2 pr-2 bg-smoke rounded-100 mb-0" style={{backgroundColor:"rgba(126, 87, 194, 0.12)"}}>New</h6>
                     </div>
                 </div>
                 <div className={`d-flex d-flex-column ${styles["providers"]}`} id="providers">
@@ -32,7 +32,7 @@ export default function ConnectWallet(){
                             <img src="images/matemask.png"/>
                             <h5 className="f-600 secondary-font mb-0 ml-2">Metamask</h5>
                         </div>
-                        <h6 className="f-700 text-primary p-1 pl-2 pr-2 bg-smoke rounded-100 mb-0" style={{background: "rgba(235, 89, 81, 0.12);"}}>Most popular</h6>
+                        <h6 className="f-700 text-primary p-1 pl-2 pr-2 bg-smoke rounded-100 mb-0" style={{backgroundColor:"rgba(235, 89, 81, 0.12)"}}>Most popular</h6>
                     </div>
                     <div className={`d-flex d-align-center mt-4 ${styles["logo"]}`}>
                         <img src="images/coinbase.png"/>

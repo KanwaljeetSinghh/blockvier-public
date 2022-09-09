@@ -3,8 +3,6 @@ import Categories from '../modules/Categories';
 import SellingSteps from '../modules/Selling-Steps';
 import Collectables from '../modules/Collectables';
 import CryptoExchange from '../modules/Crypto-Exchange';
-import LoginModal from "../modules/Login-Modal";
-        
 
 import { Fragment } from 'react';
 
