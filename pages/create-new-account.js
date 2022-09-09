@@ -3,27 +3,19 @@ import styles from '../modules/css/create-account.module.css';
 import ImageIconaccount from "../icons/Image-icon-account";
 import Facebook from "../icons/facebook";
 import Google from "../icons/Google";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 
 
 export default function CreateNewAccount(){
-    const[tab,setTab] = useState(0);
-    // useEffect(() =>{
-    //     const ele = document.getElementsByClassName("tab");
-    //     for(let i=0;i<ele.length;i++){
-    //         ele[i].addEventListener("click",function(){
-    //             ele[i].classList.remove(styles.active);
-    //             ele[i].classList.add(styles.active);
-    //         });
-    //     }
-       
-
-    // },[])
-    const setTabOneHandler = () =>{
-        setTab(1);
-    }
-    const setTabZeroHandler = () =>{
-        setTab(0);
+    
+    const tabRef = useRef();
+    const[tab,setTab] = useState("personal");
+    const tabHandler = (e) => {
+        tabRef.current.querySelectorAll("div").forEach((item) => {
+            item.classList.remove(styles.active)
+        });
+        e.currentTarget.classList.add(styles.active)
+        setTab(e.currentTarget.getAttribute("value"))
     }
     return (
         <div className="container">
@@ -31,15 +23,15 @@ export default function CreateNewAccount(){
                 <SectionHeading title="Create" highlighted-title="new account"></SectionHeading>
                 <h6 className="f-500 l-22 text-danger secondary-font">*Required fields</h6>
                 <h4 className="f-600 l-32 mb-0 mb-3 secondary-font">Type of account<span className="text-danger">*</span></h4>
-                <div className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
-                    <div type="0" className={`d-flex tab ${styles["personal"]} ${styles['active']}`} onClick={setTabZeroHandler}>
+                <div ref={tabRef} className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
+                    <div value="personal" className={`d-flex tab ${styles["personal"]} ${styles['active']}`} onClick={tabHandler}>
                         <div className={`${styles["circle"]}`}></div>
                         <div>
                             <h5 className="f-600 mb-0 secondary-font">Personal Details</h5>
                             <h6 className="f-500 mb-0 secondary-font">Individual account</h6>
                         </div>
                     </div>
-                    <div type="1" className={`d-flex tab ${styles["business"]}`} onClick={setTabOneHandler}>
+                    <div value="business" className={`d-flex tab ${styles["business"]}`} onClick={tabHandler}>
                         <div className={`${styles["circle"]}`}></div>
                         <div>
                             <h5 className="f-600 mb-0 secondary-font">Business</h5>
@@ -47,7 +39,7 @@ export default function CreateNewAccount(){
                         </div>
                     </div>
                 </div>
-                {tab ==0 && 
+                {tab == "personal" && 
                 <>
                     <label>Name<span className="text-danger">*</span></label>
                     <input type="text" placeholder="Alexander Payne"/>
@@ -91,7 +83,7 @@ export default function CreateNewAccount(){
                     </div>
                     <h5 className="f-600 text-grey mt-3 secondary-font">Already have an account?<span className="text-primary">Login here</span></h5>
                 </>}
-                {tab ==1 &&
+                {tab == "business" &&
                 <>
                 <label>Legal Company Name<span className="text-danger">*</span></label>
                 <input type="text" placeholder="Alexander Payne"/>

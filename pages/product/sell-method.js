@@ -2,32 +2,33 @@ import SectionHeading from "../../modules/Section-Heading";
 import styles from '../../modules/css/create-account.module.css';
 import Checkbox from "../../modules/Check-Box";
 import RedInstructPlain from "../../icons/Red-Instruct-Plain";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import Etherium from "../../icons/Etherium";
 import Dot from "../../icons/Dot";
 export default function SellMethod(){
-    const[tab,setTab] = useState(0);
-
-    const setTabOneHandler = () =>{
-        setTab(1);
-    }
-    const setTabZeroHandler = () =>{
-        setTab(0);
+    const tabRef = useRef();
+    const[tab,setTab] = useState("personal");
+    const tabHandler = (e) => {
+        tabRef.current.querySelectorAll("div").forEach((item) => {
+            item.classList.remove(styles.active)
+        });
+        e.currentTarget.classList.add(styles.active)
+        setTab(e.currentTarget.getAttribute("value"))
     }
     return (
         <div className="container">
             <SectionHeading title="Select" highlighted-title="sell method"></SectionHeading>
             <div className="d-flex">
                 <div className="col-6 mr-80">
-                    <div className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
-                        <div type="0" className={`d-flex tab ${styles["personal"]} ${styles['active']}`} onClick={setTabZeroHandler}>
+                    <div ref={tabRef} className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
+                        <div value="personal" className={`d-flex tab ${styles["personal"]} ${styles['active']}`} onClick={tabHandler}>
                             <div className={`${styles["circle"]}`}></div>
                             <div>
                                 <h5 className="f-600 mb-0 secondary-font">Set price</h5>
                                 <h6 className="f-500 mb-0 secondary-font">Sell at a fixed price or declining price</h6>
                             </div>
                         </div>
-                        <div type="1" className={`d-flex tab ${styles["business"]}`} onClick={setTabOneHandler}>
+                        <div value="business" className={`d-flex tab ${styles["business"]}`} onClick={tabHandler}>
                             <div className={`${styles["circle"]}`}></div>
                             <div>
                                 <h5 className="f-600 mb-0 secondary-font">Highest Bid</h5>
@@ -35,7 +36,7 @@ export default function SellMethod(){
                             </div>
                         </div>
                     </div>
-                    {tab ==0 &&
+                    {tab == "personal" &&
                     <>
                         <div className={`mt-4 ${styles["price-module"]}`}>
                                 <div className="">
@@ -86,7 +87,7 @@ export default function SellMethod(){
                             <div className="d-flex d-justify-end"><Checkbox></Checkbox></div>
                         </div>
                     </>}
-                    {tab ==1 &&
+                    {tab == "business" &&
                     <>
                         <div className={`mt-4 ${styles["price-module"]}`}>
                             <div className="">

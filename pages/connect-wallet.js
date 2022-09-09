@@ -1,9 +1,14 @@
 import SectionHeading from "../modules/Section-Heading";
 import styles from '../modules/css/connect-wallet.module.css';
 import ArrowLeft from "../icons/Arrow-right";
+import { useState } from "react";
 
 export default function ConnectWallet(){
-   
+    const [buttonValue, setbuttonValue] = useState("")
+    const toggleHandler = (e) => {
+        e.currentTarget.classList.toggle(styles.active);
+        document.getElementById("providers").classList.toggle(styles.active);
+    }
     return (
         <div className="container mt-5">
             <div className="col-6 offset-3 mt-3">
@@ -20,7 +25,7 @@ export default function ConnectWallet(){
                         <h6 className="f-700 text-primary p-1 pl-2 pr-2 bg-smoke rounded-100 mb-0" style={{background: "rgba(126, 87, 194, 0.12)"}}>New</h6>
                     </div>
                 </div>
-                <div className={`d-flex d-flex-column ${styles["providers"]}`}>
+                <div className={`d-flex d-flex-column ${styles["providers"]}`} id="providers">
                     <h6 className="f-700 text-grey mt-5 secondary-font">Connect your wallet providers</h6>
                     <div className="d-flex d-align-center d-justify-space-between">
                         <div className={`d-flex d-align-center ${styles["logo"]}`}>
@@ -100,17 +105,19 @@ export default function ConnectWallet(){
                         <img src="images/stripe.png"/>
                         <h5 className="f-600 secondary-font mb-0 ml-2">Stripe</h5>
                     </div>
-                    <button className="btn-default-width bg-white mt-5 border-black rounded d-flex d-align-center d-justify-center p-2">
-                        <h6 className="f-600 mb-0 secondary-font">Show Less options</h6>
-                        <div className="transform-90 ml-2"><ArrowLeft color="black"></ArrowLeft></div>
-                    </button>
                 </div>
-               
-                <button className={`btn-default-width bg-white mt-5 border-black rounded d-flex d-align-center d-justify-center p-2 ${styles["btn"]}`}>
-                        <h6 className="f-600 mb-0 secondary-font">Show more options</h6>
+                <button className={`col-12 btn-default-width cursor-pointer bg-white mt-5 border-black rounded d-flex d-align-center d-justify-center p-2 ${styles["bottom-wrapper"]}`} onClick={event => toggleHandler(event)}>
+                    <div className={styles["show-more"]}>
+                        <h6 className="f-600 mb-0 secondary-font ">Show less options</h6>
+                        <div className="transform-90m ml-2"><ArrowLeft color="black"></ArrowLeft></div>
+                    </div>
+                    <div className={styles["show-less"]}>
+                        <h6 className="f-600 mb-0 secondary-font ">Show more options</h6>
                         <div className="transform-90 ml-2"><ArrowLeft color="black"></ArrowLeft></div>
-                    </button>     
-                </div>
+                    </div>
+                </button> 
+                
+            </div>
         </div>
     )
 }      

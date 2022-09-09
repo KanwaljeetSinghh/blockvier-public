@@ -16,7 +16,7 @@ export default function Home() {
       <Categories headStart="Latest events in " headEnd="last 7 days"></Categories>
       <SellingSteps></SellingSteps>
       <CryptoExchange></CryptoExchange>
-      { <LoginModal></LoginModal>}
+      {/* { <LoginModal></LoginModal>} */}
     </Fragment>
   )
 }

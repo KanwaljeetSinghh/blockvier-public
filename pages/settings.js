@@ -1,25 +1,19 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import Setting from "../icons/Setting";
 import Checkbox from "../modules/Check-Box";
 import styles from '../modules/css/settings.module.css';
 import Person from "../icons/person";
 import ImageIcon from "../icons/Image-icon";
-import List from "../modules/List";
-import $ from 'jquery';
 function Settings(){
-    const profileImageHandler = () =>{
-        $('.file-upload').on('click', function() {
-            
-            $('#file-input').trigger('click');
-          })
-    } 
     
-    const[account,setnotification] = useState(0);
-    const Notificationhandler = () =>{
-        setnotification(1);
-    }
-    const AccountHandler = () =>{
-        setnotification(0);
+    const tabRef = useRef();
+    const[tab,setTab] = useState("account");
+    const tabHandler = (e) => {
+        tabRef.current.querySelectorAll("div").forEach((item) => {
+            item.classList.remove(styles.active)
+        });
+        e.currentTarget.classList.add(styles.active)
+        setTab(e.currentTarget.getAttribute("value"))
     }
     return(
         
@@ -29,18 +23,18 @@ function Settings(){
                 <h1 className="font-40 f-400">Settings</h1>
                 <a className="btn-big d-flex d-align-center d-justify-center rounded">Save Changes</a>
             </div>
-            <div className="col-3 ">
-                <div className="d-flex" type="0" onClick={AccountHandler}>
+            <div ref={tabRef} className="col-3 ">
+                <div className={`d-flex d-align-center ${styles["tab"]} ${styles["active"]}`} value="account" onClick={tabHandler}>
                     <Setting color="#9D9D9D"></Setting>
-                    <h6 className="ml-2 text-light-grey cursor-pointer">Account</h6>
+                    <h6 className="ml-2 mb-0 text-light-grey cursor-pointer">Account</h6>
                 </div>
-                <div className="d-flex" type="1" onClick={Notificationhandler}>
+                <div className={`d-flex d-align-center  ${styles["tab"]}`} value="notification" onClick={tabHandler}>
                     <Setting color="#9D9D9D"></Setting>
-                    <h6 className="ml-2 text-light-grey cursor-pointer">Notification</h6>
+                    <h6 className="ml-2 mb-0 text-light-grey cursor-pointer">Notification</h6>
                 </div>
             </div>
             
-            {account ==0 &&
+            {tab == "account" &&
                 
                 <div className="col-8 ml-5 d-flex ">
                     <div className="col-7 d-flex d-flex-column">
@@ -74,14 +68,14 @@ function Settings(){
                         <h4 className="f-600 l-32 mb-0 mb-1 secondary-font mb-0">Profile picture</h4>
                         <h6 className="f-500 l-22 text-light-grey mb-0 secondary-font ">Accepted formats: PNG, JPG, SVG, GIF</h6>
                         <h6 className="f-500 l-22 text-light-grey mb-0 secondary-font m-t-4">Recommended Image size: 400x400px</h6>
-                        <div className={`d-flex d-align-center d-justify-center file-upload ${styles["profile-picture"]}`} onClick={profileImageHandler}>
+                        <div className={`d-flex d-align-center d-justify-center file-upload ${styles["profile-picture"]}`} >
                             <Person></Person>
                             <input type="file" name="file" id="file-input" className={`${styles["visuallyhidden"]}`}/>
                         </div>
                         <h4 className="f-600 l-32 mb-0 mb-1 secondary-font mt-5">Profile canvas</h4>
                         <h6 className="f-500 l-22 text-light-grey mb-0 secondary-font">Accepted formats: PNG, JPG, SVG, GIF</h6>
                         <h6 className="f-500 l-22 text-light-grey mb-0 secondary-font m-t-4">Recommended Image size: 1920x400px</h6>
-                        <div className={`d-flex d-align-center d-justify-center file-upload ${styles["profile-canvas"]}`} onClick={profileImageHandler}>
+                        <div className={`d-flex d-align-center d-justify-center file-upload ${styles["profile-canvas"]}`}>
                             <ImageIcon></ImageIcon>
                             <input type="file" name="file" id="file-input" className={`${styles["visuallyhidden"]}`}/>
                         </div>
@@ -90,7 +84,7 @@ function Settings(){
                 </div>
                 
             }
-            {account ==1 &&
+            {tab == "notification" &&
                 <div className="col-6 ml-5 ">
                     <h6 className="f-400 secondary-font">Select which notifications you would like to receive</h6>
                     <div className="mt-4">

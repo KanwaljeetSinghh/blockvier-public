@@ -35,9 +35,11 @@ function Popup(props){
     if(props.type==2){
         return(
             <ul className={`bg-white rounded-20 p-absolute list-style-none border ${styles["popup-card-2"]}`}>
-                <li>
-                    <PopupListItem value="Profile"></PopupListItem>
-                </li>
+                <Link href="/profile-owned">
+                    <a><li>
+                        <PopupListItem value="Profile"></PopupListItem>
+                    </li></a>
+                </Link>
                 <Link href="/settings">
                     <a><li>
                         <PopupListItem value="Settings"></PopupListItem>

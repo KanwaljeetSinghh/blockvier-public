@@ -6,7 +6,7 @@ function HeaderMenu(props){
             <Link href="/"><a><MenuItem childs="false" value="Home"></MenuItem></a></Link>
             <Link href="/marketplace"><a><MenuItem childs="true" value="Marketplace"></MenuItem></a></Link>
             <Link href="/faqs"><a><MenuItem childs="false" value="FAQs"></MenuItem></a></Link>
-            <Link href=""><a><MenuItem childs="false" value="Create"></MenuItem></a></Link>
+            <Link href="/create-new-item"><a><MenuItem childs="false" value="Create"></MenuItem></a></Link>
         </ul>
     )
 }

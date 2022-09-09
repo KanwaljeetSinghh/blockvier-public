@@ -16,26 +16,16 @@ import Tag from '../icons/Tag';
 import PropertyTable from "../modules/Property-Table";
 import CrossWithBg from '../icons/Cross-with-bg';
 import CollectableCard from '../modules/Collectable-Card';
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 export default function ProfileOwned(){
-    const[tab,setTab] = useState(0);
-    const setTabZero =()=>{
-        setTab(0);
-    }
-    const setTabOne =()=>{
-        setTab(1);
-    }
-    const setTabTwo =() =>{
-        setTab(2);
-    }
-    const setTabThree =() =>{
-        setTab(3);
-    }
-    const setTabFour =() =>{
-        setTab(4);
-    }
-    const setTabFive =() =>{
-        setTab(5);
+    const[tab,setTab] = useState("Owned");
+    const tabRef = useRef();
+    const tabHandler = (e) => {
+        tabRef.current.querySelectorAll("li").forEach((item) => {
+            item.classList.remove(styles.active)
+        });
+        e.currentTarget.classList.add(styles.active)
+        setTab(e.currentTarget.getAttribute("value"))
     }
     return (
         <div className="container pr-2">
@@ -140,38 +130,38 @@ export default function ProfileOwned(){
                     </div>
                 </div>
             </div>
-            <div className={`d-flex mt-5 ${styles["profile-tabs"]}`}>
-                <li type="0" className={`d-flex d-align-center d-justify-center cursor-pointer ${styles["active"]}`}  onClick={setTabZero}>
+            <div ref={tabRef} className={`d-flex mt-5 ${styles["profile-tabs"]}`}>
+                <li value="Owned" className={`d-flex d-align-center d-justify-center cursor-pointer ${styles["active"]}`}  onClick={tabHandler}>
                     <h5 className='f-600 mb-0'>Owned</h5>
                     <div className={`bg-smoke d-flex d-justify-center d-align-center ${styles["avg-circle"]}`}>
                         <h5 className="f-500 text-primary mb-0">8</h5>
                     </div>
                 </li>
-                <li type="1" className={`d-flex d-align-center d-justify-center cursor-pointer `} onClick={setTabOne}>
+                <li value="Created" className={`d-flex d-align-center d-justify-center cursor-pointer `} onClick={tabHandler}>
                     <h5 className='f-600 mb-0'>Created</h5>
                     <div className={`bg-smoke d-flex d-justify-center d-align-center ${styles["avg-circle"]}`}>
                         <h5 className="f-500 text-primary mb-0">8</h5>
                     </div>
                 </li>
-                <li type="2" className={`d-flex d-align-center d-justify-center cursor-pointer `} onClick={setTabTwo}>
+                <li value="Favorites" className={`d-flex d-align-center d-justify-center cursor-pointer `} onClick={tabHandler}>
                     <h5 className='f-600 mb-0'>Favorites</h5>
                     <div className={`bg-smoke d-flex d-justify-center d-align-center ${styles["avg-circle"]}`}>
                         <h5 className="f-500 text-primary mb-0">8</h5>
                     </div>
                 </li>
-                <li type="3" className={`d-flex d-align-center d-justify-center cursor-pointer `}  onClick={setTabThree}>
+                <li value="Bids" className={`d-flex d-align-center d-justify-center cursor-pointer `}  onClick={tabHandler}>
                     <h5 className='f-600 mb-0'>Bids</h5>
                     <div className={`bg-smoke d-flex d-justify-center d-align-center ${styles["avg-circle"]}`}>
                         <h5 className="f-500 text-primary mb-0">8</h5>
                     </div>
                 </li>
-                <li type="4" className={`d-flex d-align-center d-justify-center cursor-pointer `}  onClick={setTabFour}>
+                <li value="Orders" className={`d-flex d-align-center d-justify-center cursor-pointer `}  onClick={tabHandler}>
                     <h5 className='f-600 mb-0'>Orders</h5>
                     <div className={`bg-smoke d-flex d-justify-center d-align-center ${styles["avg-circle"]}`}>
                         <h5 className="f-500 text-primary mb-0">8</h5>
                     </div>
                 </li>
-                <li type="5" className={`d-flex d-align-center d-justify-center cursor-pointer `}  onClick={setTabFive}>
+                <li value="History" className={`d-flex d-align-center d-justify-center cursor-pointer `}  onClick={tabHandler}>
                     <h5 className='f-600 mb-0'>History</h5>
                     <div className={`bg-smoke d-flex d-justify-center d-align-center ${styles["avg-circle"]}`}>
                         <h5 className="f-500 text-primary mb-0">8</h5>
@@ -234,7 +224,7 @@ export default function ProfileOwned(){
                 </div>
                 
                 <div className='col-9 mt-5 ml-5 d-flex d-flex-column gap-3'>
-                    {tab ==0 && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
+                    {tab == "Owned" && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
@@ -242,13 +232,13 @@ export default function ProfileOwned(){
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                     </div>}
-                    {tab ==1 && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
+                    {tab == "Created" && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         
                     </div>}  
-                    {tab ==2 && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
+                    {tab == "Favorites" && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
@@ -256,12 +246,12 @@ export default function ProfileOwned(){
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                     </div>} 
-                    {tab ==3 && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
+                    {tab == "Bids" && <div className={`pl-3 pr-1 ${styles["data-cards"]}`}>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         <CollectableCard src="/images/Collectable.png"></CollectableCard>
                         
                     </div>} 
-                    {tab ==4 && 
+                    {tab == "Orders" && 
                     <>
                         <div className={`p-20 border rounded-20 ${styles["orders"]}`}>
                             <div className={`bg-smoke ${styles["order-img"]}`}>
@@ -330,7 +320,7 @@ export default function ProfileOwned(){
                         </div>
                         </div>
                     </>}
-                    {tab ==5 && 
+                    {tab == "History" && 
                     <div className='ml-5'>
                         <PropertyTable type="2"></PropertyTable>
                     </div>}

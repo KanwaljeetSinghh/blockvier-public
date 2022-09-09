@@ -3,12 +3,22 @@ import SearchBar from "./Search-bar";
 import HeaderMenu from "./Header-Menu";
 import BannerButton from "./Banner-Button";
 import SearchModal from "./Search-Modal";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Link from 'next/link'
 function Header(){
-    const[search,setSearch] = useState(false);
+    const [search,setSearch] = useState(false);
+    const [hasMount, setHasMount] = useState(false);
     const searchHandler = () =>{
         setSearch(prev => !prev);
+    }
+    
+    useEffect(()=>{
+        setHasMount(true)
+    },[])
+
+    
+    if(!hasMount){
+        return <></>
     }
     return (
         <header>

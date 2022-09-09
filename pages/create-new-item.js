@@ -1,18 +1,18 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import SectionHeading from "../modules/Section-Heading";
 import styles from '../modules/css/create-new-item.module.css';
 import ImageIconaccount from "../icons/Image-icon-account";
 import Checkbox from "../modules/Check-Box";
 import Plus from "../icons/Plus";
 export default function CreateNewItem(){
-
-    const[tab,setTab] = useState(0);
-
-    const setTabOneHandler = () =>{
-        setTab(1);
-    }
-    const setTabZeroHandler = () =>{
-        setTab(0);
+    const tabRef = useRef();
+    const[tab,setTab] = useState("personal");
+    const tabHandler = (e) => {
+        tabRef.current.querySelectorAll("div").forEach((item) => {
+            item.classList.remove(styles.active)
+        });
+        e.currentTarget.classList.add(styles.active)
+        setTab(e.currentTarget.getAttribute("value"))
     }
     return (
         <div className="container mt-5">
@@ -22,15 +22,15 @@ export default function CreateNewItem(){
 
                 <h5 className={`text-grey f-500 secondary-font ${styles['heading']}`}>Connect with one of our available wallet providers or please create a new one.</h5>
                 <h6 className="f-500 text-danger mt-3">*Required fields</h6>
-                <div className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
-                    <div type="0" className={`d-flex tab ${styles["personal"]} ${styles['active']}`} onClick={setTabZeroHandler}>
+                <div ref={tabRef} className="bg-smoke rounded p-1 d-flex d-justify-space-between mb-4">
+                    <div value="personal" onClick={tabHandler} className={`d-flex tab ${styles["personal"]} ${styles['active']}`}>
                         <div className={`${styles["circle"]}`}></div>
                         <div>
                             <h5 className="f-600 mb-0 secondary-font">Physical product</h5>
                             <h6 className="f-500 mb-0 secondary-font">e.g. Gaming assets, NFT art & NFT music</h6>
                         </div>
                     </div>
-                    <div type="1" className={`d-flex tab ${styles["business"]}`} onClick={setTabOneHandler}>
+                    <div value="business" onClick={tabHandler} className={`d-flex tab ${styles["business"]}`}>
                         <div className={`${styles["circle"]}`}></div>
                         <div>
                             <h5 className="f-600 mb-0 secondary-font">Digital product</h5>
@@ -38,7 +38,7 @@ export default function CreateNewItem(){
                         </div>
                     </div>
                 </div>
-                {tab ==0 &&
+                {tab == "personal" &&
                 <>
                 <div className="border-bottom-dashed pb-5 d-flex d-flex-column">
                     <label>Choose Category<span className="text-danger">*</span></label>
@@ -100,7 +100,7 @@ export default function CreateNewItem(){
                     <button className="btn btn-default-width btn-primary mt-5">Create</button>
                 </div>
                 </>}
-                {tab == 1 &&
+                {tab == "business" &&
                 
                 <div className=" pb-5 d-flex d-flex-column">
                     <label>Choose Category<span className="text-danger">*</span></label>

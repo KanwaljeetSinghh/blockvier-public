@@ -1,3 +1,23 @@
+.tab{
+    padding: 9px 0;
+    position: relative;
+}
+.tab.active svg path{
+    fill: black;
+}
+.tab.active h6{
+    color: black;
+}
+.tab.active::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background: linear-gradient(96.06deg, #FEAC5E 0%, #C779D0 50%, #4BC0C8 100%);
+    border-radius: 2px;
+    left: -15px;
+    top:0;
+}
 .personal-details{
     border-bottom: 2px solid #e6e6e6;
     padding-bottom: 8px;

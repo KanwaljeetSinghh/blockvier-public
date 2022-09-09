@@ -9,6 +9,20 @@
     height:350px;
     overflow-y: hidden;
 }
-.btn{
-    width:100%;
+.providers.active{
+    height: auto;
+}
+.bottom-wrapper .show-more{
+    display: flex;
+    align-items: center;
+}
+.bottom-wrapper.active .show-more{
+    display: none;
+}
+.bottom-wrapper .show-less{
+    display: none;
+}
+.bottom-wrapper.active .show-less{
+    display: flex;
+    align-items: center;
 }
